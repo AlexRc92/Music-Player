@@ -1,0 +1,36 @@
+@font-face {
+  font-family: tryout-regular;
+  src: url('./fonts/tryout-regular.ttf');
+}
+
+@font-face {
+  font-family: tryout-icons;
+  src: url('./fonts/tryout-icons.ttf');
+}
+
+/* This mixin allows us to avoid repeating attributes and modify font-size
+value when used whith @include. */
+@mixin emoji($size) {
+  font-family: tryout-icons;
+  font-size: $size;
+}
+
+.heart::before {
+  @include emoji(24px);
+  content: '\f3dc'
+}
+
+.heart-empty::before {
+  @include emoji(24px);
+  content: '\f3db'
+}
+
+.ellipsis::before {
+  @include emoji(16px);
+  content: '\f12c'
+}
+
+.music::before {
+  @include emoji(16px);
+  content: '\f156'
+}
